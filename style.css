@@ -1,0 +1,84 @@
+.wrapper{
+    width: 95%;
+    margin: 0 auto;
+}
+header{
+    background: #f59500;
+   /*position: fixed;*/
+    width: 95%;
+}
+header button, .phone, .info, .otziv, .logo{
+text-align: center;
+margin: 10px 10px;
+display: inline-block;
+
+}
+main{
+    margin: 20px 20px;
+}
+.phone, .info, .otziv{
+    font-size: 13px;
+    margin-right: 1em;
+}
+.name{
+    text-align: left;
+    font-size: 24px;
+}
+.column {
+    float: left;
+    width: 25%;
+    text-align: center;
+    margin: 30px 0;
+
+}
+.row{
+    background: #cecece8f;
+    margin: 0px auto;
+}
+.otzivi {
+    display: block;
+    text-align: center;
+}
+.fon img{
+    float: right;
+
+}
+.fon{
+    display: inline-block;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+a.button24 {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: .5em 2em;
+    outline: none;
+    margin-top: 10px;
+    border-width: 2px 0;
+    border-style: solid none;
+    border-color: #FDBE33 #000 #D77206;
+    border-radius: 6px;
+    background: linear-gradient(#F3AE0F, #E38916) #E38916;
+    transition: 0.2s;
+  } 
+  a.button24:hover { background: linear-gradient(#f5ae00, #f59500) #f5ae00; }
+  a.button24:active { background: linear-gradient(#f59500, #f5ae00) #f59500; }
+  .description{
+      color: antiquewhite;
+  }
+  .film{
+      display: inline-block;
+      width: 100%;
+      margin: 0 auto;
+      background: rgba(173, 173, 173, 0.527);
+  }
+  .vidos{
+      text-align: center;
+  }
+  footer{
+      background: #000000;
+  }
