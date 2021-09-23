@@ -11,7 +11,7 @@ header{
 .menu{
     display: flex;
     justify-content: space-between;
-    margin: -90px 0;
+    margin: -10px 0;
 }
 .logo{
     display: flex;
@@ -63,7 +63,8 @@ H1 {
     border-bottom-width: 1px;
   }
 .name{
-    margin:90px 
+    display: flex;
+    margin:60px 
 }
 .column {
     float: left;
@@ -88,9 +89,6 @@ font-size: 20px;
 .fon{
     width: 50%;
 }
-.image{
-
-}
 .row:after {
     content: "";
     display: table;
@@ -100,7 +98,7 @@ a.button24 {
     display: flex;
     width: 200px;
     justify-content: center;
-    margin: 20px auto;
+    margin: 40px 0;
     color: white;
     text-decoration: none;
     padding: .5em 2em;
@@ -139,3 +137,14 @@ a.button24 {
     right:50px;
     cursor:pointer;
     }
+
+.row-1 {
+    display: inline-block;
+}
+
+.row-1 > .fon,
+.row-1 > .image {
+    float: left;
+    width: 50%;
+    margin: 30px 0px;
+} 

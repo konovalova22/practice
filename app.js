@@ -35,6 +35,6 @@ const columnDefs = [
       grid.gridOptions.api.forEachNode(node => {
         sum += (+node.data.income - +node.data.consumption - +node.data.goal - +node.data.spending)/31
       });
-      document.getElementById('sum').innerText = sum;
+      document.getElementById('sum').innerText = sum.toFixed(2);
   }
 
