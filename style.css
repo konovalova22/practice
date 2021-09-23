@@ -7,18 +7,26 @@ header{
    /*position: fixed;*/
     width: 95%;
 }
-header button, .phone, .info, .otziv, .logo{
-text-align: center;
-margin: 10px 10px;
-display: inline-block;
-
-}
 main{
     margin: 20px 20px;
 }
-.phone, .info, .otziv{
-    font-size: 13px;
-    margin-right: 1em;
+.logo img{
+    display: flex;
+    justify-content:space-between;
+}
+.menu_item > ul{
+	display: flex;
+	justify-content:right;
+    list-style-type:none;
+}
+.menu_link{
+	color: #000;
+	text-decoration: none;
+	margin-right: 30px;
+
+}
+.menu_link:hover{
+	color: #5f3505;
 }
 .name{
     text-align: left;
