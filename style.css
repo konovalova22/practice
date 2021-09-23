@@ -1,23 +1,29 @@
 .wrapper{
-    width: 95%;
+    width: 100%;
     margin: 0 auto;
 }
 header{
-    background: #f59500;
-   /*position: fixed;*/
-    width: 95%;
+    background: #ffffff;
+    position: fixed;
+    width: 100%;
+    box-shadow: 0  0 8px rgba(139, 139, 139, 0.205);
 }
-main{
-    margin: 20px 20px;
-}
-.logo img{
+.menu{
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
+    margin: -90px 0;
+}
+.logo{
+    display: flex;
+    margin: 0px 10%;
+}
+.name-opr{
+    color: rgba(44, 44, 44, 0.623);
 }
 .menu_item > ul{
 	display: flex;
-	justify-content:right;
     list-style-type:none;
+    margin: 20px;
 }
 .menu_link{
 	color: #000;
@@ -25,34 +31,65 @@ main{
 	margin-right: 30px;
 
 }
+
 .menu_link:hover{
 	color: #5f3505;
 }
+H1 {
+    display: inline-block;
+    text-shadow:
+      1px 1px 1px white,
+      1px -1px 1px white,
+      -1px 1px 1px white,
+      -1px -1px 1px white;
+    color: rgb(25, 34, 43);
+    transition: all 1s;
+  }
+  
+  H1:after {
+    content: "";
+    display: block;
+    position: relative;
+    z-index: -1;
+    width: 100%;
+    margin: auto;
+    border-bottom: 3px solid rgb(49, 56, 61);
+    bottom: .15em;
+    transition: all 1s;
+  }
+  
+  H1:hover:after {
+    width: 0%;
+    border-bottom-width: 1px;
+  }
 .name{
-    text-align: left;
-    font-size: 24px;
+    margin:90px 
 }
 .column {
     float: left;
     width: 25%;
     text-align: center;
     margin: 30px 0;
-
+}
+.col-1{
+font-size: 20px;
+}
+.col-2{
+    color: rgba(44, 43, 43, 0.705);
 }
 .row{
     background: #cecece8f;
     margin: 0px auto;
 }
 .otzivi {
-    display: block;
-    text-align: center;
-}
-.fon img{
-    float: right;
-
+    display: flex;
+    justify-content: center;
 }
 .fon{
-    display: inline-block;
+    width: 50%;
+}
+.image{
+
 }
 .row:after {
     content: "";
@@ -60,7 +97,10 @@ main{
     clear: both;
 }
 a.button24 {
-    display: inline-block;
+    display: flex;
+    width: 200px;
+    justify-content: center;
+    margin: 20px auto;
     color: white;
     text-decoration: none;
     padding: .5em 2em;
@@ -90,3 +130,12 @@ a.button24 {
   footer{
       background: #000000;
   }
+  .topbutton {
+    width:40px;
+    text-align:center;
+    padding:10px;
+    position:fixed;
+    bottom:50px;
+    right:50px;
+    cursor:pointer;
+    }
