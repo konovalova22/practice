@@ -66,33 +66,43 @@ H1 {
     display: flex;
     margin:60px 
 }
-.column {
+.column{
     float: left;
     width: 25%;
     text-align: center;
     margin: 30px 0;
 }
-.col-1{
+.col-1, .col-3{
 font-size: 20px;
 }
-.col-2{
+.col-2, .col-4{
     color: rgba(44, 43, 43, 0.705);
 }
 .row{
-    background: #cecece8f;
+    background: #ffffff8f;
     margin: 0px auto;
 }
-.otzivi {
-    display: flex;
-    justify-content: center;
-}
+
 .fon{
     width: 50%;
 }
-.row:after {
+.row:after, .row-otz:after {
     content: "";
     display: table;
     clear: both;
+}
+.row-otz img{
+    border-radius: 100%;
+    border: 3px solid green; 
+    box-shadow: 0 0 7px #666;
+    padding: 1%;
+}
+.column-otz{
+    width: 20%;
+    text-align: center;
+    margin: 30px 30px;
+    display: inline-block;
+    background: rgb(241, 241, 241);
 }
 a.button24 {
     display: flex;
@@ -116,18 +126,7 @@ a.button24 {
   .description{
       color: antiquewhite;
   }
-  .film{
-      display: inline-block;
-      width: 100%;
-      margin: 0 auto;
-      background: rgba(173, 173, 173, 0.527);
-  }
-  .vidos{
-      text-align: center;
-  }
-  footer{
-      background: #000000;
-  }
+
   .topbutton {
     width:40px;
     text-align:center;
@@ -145,10 +144,18 @@ a.button24 {
 .row-1 > .fon,
 .row-1 > .image {
     float: left;
-    width: 50%;
-    margin: 30px 0px;
+    width: 45%;
+    margin-top: 70px;
+    margin-left: 50px;
 } 
-
+.klient{
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    flex-direction:column;
+    text-align: center;
+    background: rgb(247, 247, 247);
+}
 .footer{
 	background-color: rgb(20, 14, 27);
 	color: white;
@@ -175,3 +182,30 @@ a.button24 {
         margin-left: 3rem;
         z-index: 2;
 }
+.splide__slide img {
+	width : 60%;
+	height: 60%;
+}
+.splide__slide{
+    border-radius: 10%;
+    border: 3px solid rgba(17, 17, 17, 0.63); 
+    box-shadow: 0 0 7px #666;
+    padding: 1%;
+    background: rgba(255, 255, 255, 0.61);
+}
+.vozm{
+    background: rgba(202, 201, 201, 0.452);   
+    width: 100%;
+    font-size: 18px;
+    display: inline-block;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.vozm h2{
+
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    }
