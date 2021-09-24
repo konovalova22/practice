@@ -47,11 +47,38 @@
                 bottom: 5%;
                 left: 5%;
             }
+            .tab-1{
+              position: absolute;
+              left: 20%;
+              bottom: 60%;
+            }
+            .tab-2{
+              position: absolute;
+              right: 42%;
+              bottom: 60%;
+            }
       </style>
-
-    <div id="myGrid" style="height: 200px; width:500px;" class="ag-theme-alpine"></div>
-    
-    <span>Сумма в день: </span><span id="sum"></span>
+    <button onclick="onDeleteClick()"> удалить </button>
+    <button onclick="onDeleteClick2()"> удалить </button>
+    <button onclick="onAddClick()"> Добавить </button>
+    <button onclick="onAddClick2()"> Добавить вап</button>
+    <p class="tab-1">Постоянные расходы:</p>
+    <div id="myGrid" style="height: 200px; width:500px; position:absolute; left:20%" class="ag-theme-alpine"></div>
+    <p class="tab-2">Расходы:</p>
+    <div id="myGrid2" style="height: 200px; width:500px; position:absolute; right: 20%;" class="ag-theme-alpine"></div>
+         
+    <input type="text" style="position:absolute; left: 20%; bottom: 65%;" onblur="calcTotal()" id="doxod">
+    <p style="position:absolute; left: 20%; bottom: 67%;">Доходы:</p>
+    <span>Результат: </span><span id="result"></span>
+    <!--<script>
+        input.oninput = function() {
+        result.innerHTML = input.value;
+  };
+    </script> -->
+    <input type="text" style="position:absolute;left: 30%; bottom: 65%;" id="tcel">
+    <p style="position:absolute; left: 30%; bottom: 67%;">Цель накоплений:</p> 
+    <!-- <span>Сумма: </span><span id="sum"></span>
+    <span>Сумма2: </span><span id="summa"></span> -->
 
         <a class="back" onclick="javascript:history.back();return false;">
         <img src="img/ctrelka.png" alt="Картинка" width="50"/>
