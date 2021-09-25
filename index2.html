@@ -47,7 +47,7 @@
                 bottom: 5%;
                 left: 5%;
             }
-            .tab-1{
+/*             .tab-1{
               position: absolute;
               left: 20%;
               bottom: 60%;
@@ -56,27 +56,64 @@
               position: absolute;
               right: 42%;
               bottom: 60%;
+            } */
+            .row{
+              display: flex;
+            }
+            .column{
+              margin: 10px;
+            }
+            .add-1{
+              background: rgb(211, 211, 211); 
+              display: flex;       
+              justify-content: space-between;    
+              align-items: center; 
+              margin-top: 10px;
+            }
+            .add{
+              text-align: right;
+             
             }
       </style>
-    <button onclick="onDeleteClick()"> удалить </button>
-    <button onclick="onDeleteClick2()"> удалить </button>
-    <button onclick="onAddClick()"> Добавить </button>
-    <button onclick="onAddClick2()"> Добавить вап</button>
-    <p class="tab-1">Постоянные расходы:</p>
-    <div id="myGrid" style="height: 200px; width:500px; position:absolute; left:20%" class="ag-theme-alpine"></div>
-    <p class="tab-2">Расходы:</p>
-    <div id="myGrid2" style="height: 200px; width:500px; position:absolute; right: 20%;" class="ag-theme-alpine"></div>
-         
-    <input type="text" style="position:absolute; left: 20%; bottom: 65%;" onblur="calcTotal()" id="doxod">
-    <p style="position:absolute; left: 20%; bottom: 67%;">Доходы:</p>
-    <span>Результат: </span><span id="result"></span>
+
+<div class="row">
+  <div class="column">
+    <p style="font-weight: bold;">Доходы:</p>
+    <input type="text" onblur="calcTotal()" id="doxod">
+    <div class="add-1">
+      <p class="tab-1" style="font-weight: bold; margin-bottom: 5px;">Постоянные расходы:</p>
+      <div class="add">
+        <button onclick="onAddClick()" style="color: white; background: rgba(0, 128, 0, 0.762);"> Добавить </button>
+        <button onclick="onDeleteClick()" style="color: white;background: rgba(255, 0, 0, 0.762);margin: 10px;"> удалить </button>
+      </div>
+     
+     
+    </div>
+    
+    <div id="myGrid" style="height: 200px; width:500px; " class="ag-theme-alpine"></div>
+  </div>
+  <div class="column">
+    <p style="font-weight: bold;">Цель накоплений:</p> 
+    <input type="text"  id="tcel">
+    <div class="add-1">
+      <p class="tab-2" style="font-weight: bold; margin-bottom: 5px;" >Расходы:</p>
+    <div class="add">
+      <button onclick="onAddClick2()" style="color: white; background: rgba(0, 128, 0, 0.762);"> Добавить</button>
+        <button onclick="onDeleteClick2()" style="color: white; background: rgba(255, 0, 0, 0.762);margin: 10px;"> удалить </button>
+    </div>
+    </div>
+    
+    <div id="myGrid2" style="height: 200px; width:500px;" class="ag-theme-alpine"></div>
+  </div>
+</div>
+    <span style="font-weight: bold;">Результат: </span><span id="result"></span>
     <!--<script>
         input.oninput = function() {
         result.innerHTML = input.value;
   };
     </script> -->
-    <input type="text" style="position:absolute;left: 30%; bottom: 65%;" id="tcel">
-    <p style="position:absolute; left: 30%; bottom: 67%;">Цель накоплений:</p> 
+    
+    
     <!-- <span>Сумма: </span><span id="sum"></span>
     <span>Сумма2: </span><span id="summa"></span> -->
 

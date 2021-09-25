@@ -8,14 +8,12 @@ const columnDefs2 = [
 ];
 // specify the data
 const rowData = [
-  { name: " internet", summ: 1000},
-  { name: " internet", summ: 1000}
+  { name: " ", summ: ' '}
 /*     { make: "Ford", model: "Mondeo", price: 32000 },
   { make: "Porsche", model: "Boxter", price: 72000 } */
 ];
 const rowData2 = [
-  { names: " internet", summa: 1000},
-  { names: " internet", summa: 1000}
+  { names: " ", summa: ' '}
 ];
 // let the grid know which columns and what data to use
 const gridOptions = {
@@ -95,5 +93,11 @@ function calcTotal() {
 function onAddClick(){
   grid.gridOptions.api.applyTransaction({
     add: [{ name: "", summ: 0}]
+  })
+}
+
+function onAddClick2(){
+  gridRight.gridOptions.api.applyTransaction({
+    add: [{ names: "", summa: 0}]
   })
 }
