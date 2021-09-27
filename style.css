@@ -110,6 +110,7 @@ font-size: 20px;
 }
 .column-otz{
     width: 20%;
+
     text-align: center;
     margin: 30px 30px;
     display: inline-block;
@@ -156,7 +157,7 @@ a.button24 {
 .row-1 > .image {
     float: left;
     width: 45%;
-    margin-top: 70px;
+    margin-top: 10px;
     margin-left: 50px;
 } 
 .klient{

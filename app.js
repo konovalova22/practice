@@ -8,9 +8,10 @@ const columnDefs2 = [
 ];
 // specify the data
 const rowData = [
-  { name: "Квартира", summ: 15000}
-/*     { make: "Ford", model: "Mondeo", price: 32000 },
-  { make: "Porsche", model: "Boxter", price: 72000 } */
+  { name: "Квартира", summ: 15000},
+  { name: "Квартира", summ: 15000},
+  { name: "Квартира", summ: 15000},
+  { name: "Квартира", summ: 15000},
 ];
 const rowData2 = [
   { names: "Такси ", summa: 3000}
@@ -105,3 +106,40 @@ function onAddClick2(){
     add: [{ names: "", summa: 0}]
   })
 }
+
+agCharts.AgChart.create({
+  rowData: rowData,
+  container: document.querySelector('#myGrid'),
+  series: [{
+    type: 'column',
+      xKey: 'name',
+      yKey: 'summ',
+  }],
+});
+
+/* var options = {
+  container: document.querySelector('#myGrid'),
+  data: rowData,
+  title: {
+      text: 'Beverage Expenses'
+  },
+  subtitle: {
+      text: 'per quarter'
+  },
+  padding: {
+      top: 40,
+      right: 40,
+      bottom: 40,
+      left: 40
+  },
+  series: [{
+      type: 'column',
+      xKey: 'name',
+      yKeys: ['summ']
+  }],
+  legend: {
+      spacing: 40
+  }
+};
+
+agCharts.AgChart.create(options); */
