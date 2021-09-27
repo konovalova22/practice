@@ -1,21 +1,30 @@
+body{
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+}
 .wrapper{
     width: 100%;
     margin: 0 auto;
+    
 }
 header{
     background: #ffffff;
-    position: fixed;
     width: 100%;
     box-shadow: 0  0 8px rgba(139, 139, 139, 0.205);
 }
 .menu{
     display: flex;
     justify-content: space-between;
-    margin: -10px 0;
 }
 .logo{
     display: flex;
     margin: 0px 10%;
+
+}
+.logo p{
+    font-size: 20px;
+}
+.logo img{
+    margin-top:10px;
 }
 .name-opr{
     color: rgba(44, 44, 44, 0.623);
@@ -71,6 +80,7 @@ H1 {
     width: 25%;
     text-align: center;
     margin: 30px 0;
+    
 }
 .col-1, .col-3{
 font-size: 20px;
@@ -81,6 +91,7 @@ font-size: 20px;
 .row{
     background: #ffffff8f;
     margin: 0px auto;
+    
 }
 
 .fon{
@@ -155,6 +166,7 @@ a.button24 {
     flex-direction:column;
     text-align: center;
     background: rgb(247, 247, 247);
+    font-family: "Times New Roman", Times, serif;
 }
 .footer{
 	background-color: rgb(20, 14, 27);
@@ -187,14 +199,12 @@ a.button24 {
 	height: 60%;
 }
 .splide__slide{
-    border-radius: 10%;
-    border: 3px solid rgba(17, 17, 17, 0.63); 
     box-shadow: 0 0 7px #666;
     padding: 1%;
     background: rgba(255, 255, 255, 0.61);
 }
 .vozm{
-    background: rgba(202, 201, 201, 0.452);   
+    background: rgba(202, 201, 201, 0.514);   
     width: 100%;
     font-size: 18px;
     display: inline-block;
@@ -203,7 +213,7 @@ a.button24 {
     align-items: center;
 }
 
-.vozm h2{
+.vozm h3{
 
     display: flex;
     justify-content: center;

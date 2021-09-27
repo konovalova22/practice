@@ -1,19 +1,19 @@
 const columnDefs = [
-  { field: "name", editable: true },
-  { field: "summ", editable: true }
+  { field: "name", editable: true,  headerName: 'Название' },
+  { field: "summ", editable: true, headerName: 'Сумма (руб)' }
 ];
 const columnDefs2 = [
-  { field: "names", editable: true },
-  { field: "summa", editable: true }
+  { field: "names", editable: true,  headerName: 'Название' },
+  { field: "summa", editable: true, headerName: 'Сумма (руб)'}
 ];
 // specify the data
 const rowData = [
-  { name: " ", summ: ' '}
+  { name: "Квартира", summ: 15000}
 /*     { make: "Ford", model: "Mondeo", price: 32000 },
   { make: "Porsche", model: "Boxter", price: 72000 } */
 ];
 const rowData2 = [
-  { names: " ", summa: ' '}
+  { names: "Такси ", summa: 3000}
 ];
 // let the grid know which columns and what data to use
 const gridOptions = {
@@ -24,6 +24,7 @@ const gridOptions = {
       calcTotal();
   },
   rowSelection: 'single',
+  
 };
 const gridOptions2 = {
   columnDefs: columnDefs2,
@@ -43,10 +44,13 @@ document.addEventListener('DOMContentLoaded', () => {
     grid = new agGrid.Grid(gridDiv, gridOptions);
     setSum();
 
+
     const gridDiv2 = document.querySelector('#myGrid2');
     gridRight = new agGrid.Grid(gridDiv2, gridOptions2);
     setSum2();
+    calcTotal();
 });
+
 
 function setSum() {
   globalThis.sum = 0;

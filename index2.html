@@ -3,39 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.js"></script>
+    <link href="https://unpkg.com/@ag-grid-community/all-modules@26.0.1/dist/styles/ag-theme-alpine.css" rel="stylesheet" />
     <script src="main.js"></script>
     <script src="app.js"></script> 
-   <title>Document</title>
+   <title>Система планирования бюджета</title>
 </head>
 <body>
-    <svg viewbox="0 0 100 20">
-        <defs>
-          <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
-            <stop offset="5%" stop-color="#326384"/>
-            <stop offset="95%" stop-color="#123752"/>
-          </linearGradient>
-          <pattern id="wave" x="0" y="0" width="120" height="20" patternUnits="userSpaceOnUse">
-            <path id="wavePath" d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z" mask="url(#mask)" fill="url(#gradient)"> 
-              <animateTransform
-                  attributeName="transform"
-                  begin="0s"
-                  dur="1.5s"
-                  type="translate"
-                  from="0,0"
-                  to="40,0"
-                  repeatCount="indefinite" />
-            </path>
-          </pattern>
-        </defs>
-        <text text-anchor="middle" x="50" y="15" font-size="17" fill="url(#wave)"  fill-opacity="0.6">LOADING</text>
-        <text text-anchor="middle" x="50" y="15" font-size="17" fill="url(#gradient)" fill-opacity="0.1">LOADING</text>
-      </svg>
+   
       <style>
           body,html{margin:0;padding:0;height:100%;}
             body{
-            background:url('https://farm9.staticflickr.com/8760/17195790401_ceeeafcddb_o.jpg');
-            background-size:cover;
-            font-family: 'Cabin Condensed', sans-serif;
+            background: linear-gradient(45deg, #292929d0 25%, transparent 25%, transparent 75%, #424242 75%), linear-gradient(45deg, #292929 25%, transparent 25%, transparent 75%, #292929 75%) 0.1875em 0.1875em, radial-gradient(at 50% 0, #484847, #090909);
+            background-size: 0.375em 0.375em, 0.375em 0.375em, 100% 100%;
+            font-family: Verdana, Helvetica, Arial, sans-serif;
             display:flex;
             flex-direction:column;
             justify-content:center;
@@ -59,9 +39,13 @@
             } */
             .row{
               display: flex;
+              background: rgba(236, 214, 154, 0.986);
+              width: 100%;
+
+              justify-content: center;
             }
             .column{
-              margin: 10px;
+              margin: 100px;
             }
             .add-1{
               background: rgb(211, 211, 211); 
@@ -74,14 +58,18 @@
               text-align: right;
              
             }
+            .column-1{
+              display: flex;
+              margin-bottom: 2%;
+            }
       </style>
 
 <div class="row">
   <div class="column">
     <p style="font-weight: bold;">Доходы:</p>
-    <input type="text" onblur="calcTotal()" id="doxod">
+    <input type="text" value="300000" onblur="calcTotal()" id="doxod">
     <div class="add-1">
-      <p class="tab-1" style="font-weight: bold; margin-bottom: 5px;">Постоянные расходы:</p>
+      <p class="tab-1" style="font-weight: bold; margin-bottom: 5px; margin-left: 10px;">Постоянные расходы:</p>
       <div class="add">
         <button onclick="onAddClick()" style="color: white; background: rgba(0, 128, 0, 0.762);"> Добавить </button>
         <button onclick="onDeleteClick()" style="color: white;background: rgba(255, 0, 0, 0.762);margin: 10px;"> удалить </button>
@@ -92,11 +80,16 @@
     
     <div id="myGrid" style="height: 200px; width:500px; " class="ag-theme-alpine"></div>
   </div>
+
+  <div class="column-1">
+    <span style="font-weight: bold;">Результат: </span><span id="result"></span>
+  </div>
+  
   <div class="column">
     <p style="font-weight: bold;">Цель накоплений:</p> 
-    <input type="text"  id="tcel">
+    <input type="text" value="10000"  id="tcel">
     <div class="add-1">
-      <p class="tab-2" style="font-weight: bold; margin-bottom: 5px;" >Расходы:</p>
+      <p class="tab-2" style="font-weight: bold; margin-bottom: 5px;  margin-left: 10px;" >Расходы:</p>
     <div class="add">
       <button onclick="onAddClick2()" style="color: white; background: rgba(0, 128, 0, 0.762);"> Добавить</button>
         <button onclick="onDeleteClick2()" style="color: white; background: rgba(255, 0, 0, 0.762);margin: 10px;"> удалить </button>
@@ -104,9 +97,13 @@
     </div>
     
     <div id="myGrid2" style="height: 200px; width:500px;" class="ag-theme-alpine"></div>
+
   </div>
+  
+
+  
 </div>
-    <span style="font-weight: bold;">Результат: </span><span id="result"></span>
+
     <!--<script>
         input.oninput = function() {
         result.innerHTML = input.value;
@@ -118,7 +115,7 @@
     <span>Сумма2: </span><span id="summa"></span> -->
 
         <a class="back" onclick="javascript:history.back();return false;">
-        <img src="img/ctrelka.png" alt="Картинка" width="50"/>
+        <img src="img/ctrelka.png" alt="Картинка" width="50" style="background: white; border-radius: 50%;"/>
         </a>
 </body>
 </html>
