@@ -1,20 +1,22 @@
 const columnDefs = [
-  { field: "name", editable: true, resizable:true, headerName: 'Название' },
-  { field: "summ", editable: true, resizable:true, headerName: 'Сумма (руб)' }
+  { field: "name", editable: true, resizable:true, headerName: 'Название', chartDataType: 'category' },
+  { field: "summ", editable: true, resizable:true, headerName: 'Сумма (руб)', chartDataType: 'series' }
 ];
 const columnDefs2 = [
-  { field: "names", editable: true, resizable:true, headerName: 'Название' },
-  { field: "summa", editable: true, resizable:true, headerName: 'Сумма (руб)'}
+  { field: "names", editable: true, resizable:true, headerName: 'Название', chartDataType: 'category' },
+  { field: "summa", editable: true, resizable:true, headerName: 'Сумма (руб)', chartDataType: 'series' }
 ];
 // specify the data
 const rowData = [
   { name: "Квартира", summ: 15000},
-  { name: "Квартира2", summ: 10000},
-  { name: "Квартира3", summ: 1000},
-  { name: "Квартира4", summ: 5000},
+  { name: "Интернет", summ: 1000},
+  { name: "Коммунальные услуги", summ: 5000},
 ];
 const rowData2 = [
-  { names: "Такси ", summa: 3000}
+  { names: "Такси ", summa: 10000},
+  { names: "Кофточка ", summa: 3000},
+  { names: "Роллы ", summa: 1500},
+  { names: "Духи ", summa: 5000}
 ];
 // let the grid know which columns and what data to use
 const gridOptions = {
@@ -25,7 +27,29 @@ const gridOptions = {
       calcTotal();
   },
   rowSelection: 'single',
+  enableCharts: true,
+  onFirstDataRendered: (params) => {
+    const createRangeChartParams = {
+      cellRange: {
+        columns: ['summ', 'name'],
+      },
+      chartType: 'line',
+      chartContainer: document.querySelector('#myChart'),
+      chartThemeOverrides: {
+        common: {
+          title: {
+            enabled: true,
+            text: 'Постоянные расходы',
+          },
+          legend: {
+            enabled: false,
+          },
+        },
+      },
+    };
   
+    params.api.createRangeChart(createRangeChartParams);
+  }
 };
 const gridOptions2 = {
   columnDefs: columnDefs2,
@@ -35,6 +59,30 @@ const gridOptions2 = {
       calcTotal();
   },
   rowSelection: 'single',
+  enableCharts: true,
+  onFirstDataRendered: (params) => {
+    const createRangeChartParams = {
+      cellRange: {
+        columns: ['summa', 'names'],
+
+      },
+      chartType: 'line',
+      chartContainer: document.querySelector('#myChart2'),
+      chartThemeOverrides: {
+        common: {
+          title: {
+            enabled: true,
+            text: 'Расходы',
+          },
+          legend: {
+            enabled: false,
+          },
+        },
+      },
+    };
+  
+    params.api.createRangeChart(createRangeChartParams);
+  }
 };
 let grid;
 let gridRight;
@@ -51,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setSum2();
     calcTotal();
 
-    agCharts.AgChart.create({
+    /* agCharts.AgChart.create({
       data: rowData,
       container: document.querySelector('#myChart'),
       series: [{
@@ -63,9 +111,9 @@ document.addEventListener('DOMContentLoaded', () => {
       legend: {
         position: 'bottom',
     },    
-    });
+    }); */
 
-      agCharts.AgChart.create({
+/*       agCharts.AgChart.create({
       data: rowData2,
       container: document.querySelector('#myChart2'),
       series: [{
@@ -77,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
           position: 'bottom',
       },
       
-    });
+    }); */
 });
 
 
@@ -135,29 +183,3 @@ function onAddClick2(){
   })
 }
 
-/* var options = {
-  container: document.querySelector('#myGrid'),
-  data: rowData,
-  title: {
-      text: 'Beverage Expenses'
-  },
-  subtitle: {
-      text: 'per quarter'
-  },
-  padding: {
-      top: 40,
-      right: 40,
-      bottom: 40,
-      left: 40
-  },
-  series: [{
-      type: 'column',
-      xKey: 'name',
-      yKeys: ['summ']
-  }],
-  legend: {
-      spacing: 40
-  }
-};
-
-agCharts.AgChart.create(options); */
