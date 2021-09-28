@@ -1,10 +1,10 @@
 const columnDefs = [
-  { field: "name", editable: true,  headerName: 'Название' },
-  { field: "summ", editable: true, headerName: 'Сумма (руб)' }
+  { field: "name", editable: true, resizable:true, headerName: 'Название' },
+  { field: "summ", editable: true, resizable:true, headerName: 'Сумма (руб)' }
 ];
 const columnDefs2 = [
-  { field: "names", editable: true,  headerName: 'Название' },
-  { field: "summa", editable: true, headerName: 'Сумма (руб)'}
+  { field: "names", editable: true, resizable:true, headerName: 'Название' },
+  { field: "summa", editable: true, resizable:true, headerName: 'Сумма (руб)'}
 ];
 // specify the data
 const rowData = [
@@ -58,10 +58,11 @@ document.addEventListener('DOMContentLoaded', () => {
           xKey: 'name',
           yKey: 'summ',
           yName: 'Постоянные расходы',
-      }],
+      }
+    ],
       legend: {
         position: 'bottom',
-    },     
+    },    
     });
 
       agCharts.AgChart.create({
@@ -75,6 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
       legend: {
           position: 'bottom',
       },
+      
     });
 });
 

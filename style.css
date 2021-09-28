@@ -27,7 +27,8 @@ header{
     margin-top:10px;
 }
 .name-opr{
-    color: rgba(44, 44, 44, 0.623);
+    color: rgba(66, 66, 66, 0.623);
+    font-size: 20px;
 }
 .menu_item > ul{
 	display: flex;
