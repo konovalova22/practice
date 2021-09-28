@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Тарифы</title>
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+          <div class="logo">
+          <img width="50px" height="40px" src="img/logo.png">
+          <p>Система бюджетирования</p>
+        </div>
+        <div class="search">
+          <input maxlength="20" type="text" size="20" placeholder="Поиск">
+          <button >Искать</button>
+        </div>
+        </div>
+      
+      </header>
+      
+      <div class="oplata">
+          <div class="carta">
+          <h2>Выберите способ оплаты</h2>
+      </div>
+<!--           <div class="line">
+            <a href="index.html">
+                <img src="img/house.png" width="40px" height="40px" style="margin-top: 70px;">
+                </a>
+                <a href="index3.html">
+                  <img src="img/carta.png" width="40px" height="40px" style="margin-top: 70px;">
+                </a>
+                <a href="index2.html">
+                    <img src="img/statistics.png" width="40px" height="40px" style="margin-top: 70px;">
+                </a>
+                <img src="img/sms.png" width="40px" height="40px" style="margin-top: 70px;">
+                <a class="back" onclick="javascript:history.back();return false;">
+                    <img src="img/ctrelka.png" alt="Картинка" width="50" style="background: white; border-radius: 50%;"/>
+                </a>
+            </div> -->
+            <div id="grid">
+                <div><img src="img/cart1.png"  width="200px" height="100px"></div>
+                <div><img src="img/cart2.png" width="200px" height="100px"></div>
+                <div><img src="img/cart3.png" width="200px" height="100px"></div>
+                <div><img src="img/cart4.png" width="200px" height="100px"></div>
+                <div><img src="img/cart5.png" width="200px" height="100px"></div>
+                <div><img src="img/cart6.png" width="200px" height="80px"></div>
+              </div>
+              <a class="back" onclick="javascript:history.back();return false;">
+                <img src="img/ctrelka.png" alt="Картинка" width="50" style="background: white; border-radius: 50%;"/>
+            </a>
+      </div>
+      
+<style>
+        body{
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    }
+    .wrapper{
+        display: flex;
+        height: auto;
+        background: white;
+        box-shadow: 0  0 8px rgba(139, 139, 139, 0.205);
+        align-items: center;
+        text-align: center;
+        justify-content: space-between;
+        }
+    .logo{
+        display: flex;
+        align-items: center;
+        margin: 0px 10%;
+        font-size: 20px;
+        }
+    .search{
+        display: flex;
+        margin: 0 5%;
+        }
+        .back{
+        position: absolute;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        bottom: 10%;
+
+    }
+    .oplata{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .carta h2{
+        text-align: center;
+    }
+    #grid { 
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2vw;
+  }
+#grid > div {
+  font-size: 5vw;
+  padding: .4em;
+  background: rgb(240, 240, 240);
+  box-shadow: 0  0 8px rgba(139, 139, 139, 0.205);
+  text-align: center;
+
+  margin: 20px;
+}
+</style>
+</body>
+</html>

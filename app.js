@@ -9,9 +9,9 @@ const columnDefs2 = [
 // specify the data
 const rowData = [
   { name: "Квартира", summ: 15000},
-  { name: "Квартира", summ: 15000},
-  { name: "Квартира", summ: 15000},
-  { name: "Квартира", summ: 15000},
+  { name: "Квартира2", summ: 10000},
+  { name: "Квартира3", summ: 1000},
+  { name: "Квартира4", summ: 5000},
 ];
 const rowData2 = [
   { names: "Такси ", summa: 3000}
@@ -50,6 +50,32 @@ document.addEventListener('DOMContentLoaded', () => {
     gridRight = new agGrid.Grid(gridDiv2, gridOptions2);
     setSum2();
     calcTotal();
+
+    agCharts.AgChart.create({
+      data: rowData,
+      container: document.querySelector('#myChart'),
+      series: [{
+          xKey: 'name',
+          yKey: 'summ',
+          yName: 'Постоянные расходы',
+      }],
+      legend: {
+        position: 'bottom',
+    },     
+    });
+
+      agCharts.AgChart.create({
+      data: rowData2,
+      container: document.querySelector('#myChart2'),
+      series: [{
+          xKey: 'names',
+          yKey: 'summa',
+          yName: 'Расходы',
+      }],
+      legend: {
+          position: 'bottom',
+      },
+    });
 });
 
 
@@ -106,16 +132,6 @@ function onAddClick2(){
     add: [{ names: "", summa: 0}]
   })
 }
-
-agCharts.AgChart.create({
-  rowData: rowData,
-  container: document.querySelector('#myGrid'),
-  series: [{
-    type: 'column',
-      xKey: 'name',
-      yKey: 'summ',
-  }],
-});
 
 /* var options = {
   container: document.querySelector('#myGrid'),

@@ -20,8 +20,29 @@
     <button >Искать</button>
   </div>
   </div>
+
 </header>
+
 <div class="row">
+  <div class="line">
+    <a href="index.html">
+    <img src="img/house.png" width="40px" height="40px" style="margin-top: 70px;">
+    </a>
+    <a href="index3.html">
+      <img src="img/carta.png" width="40px" height="40px" style="margin-top: 70px;">
+    </a>
+    <a href="index2.html">
+      <img src="img/statistics.png" width="40px" height="40px" style="margin-top: 70px;">
+  </a>
+    <img src="img/sms.png" width="40px" height="40px" style="margin-top: 70px;">
+    <a class="back" onclick="javascript:history.back();return false;">
+      <img src="img/ctrelka.png" alt="Картинка" width="50" style="background: white; border-radius: 50%;"/>
+      </a>
+  </div>
+  <div class="column-2">
+    <div id="myChart" ></div>
+    <div id="myChart2" ></div>
+  </div>
   <div class="column">
     <p style="font-weight: bold;">Доходы:</p>
     <input type="number" value="300000" onblur="calcTotal()" id="doxod">
@@ -46,10 +67,12 @@
     
     <div id="myGrid2" style="height: 200px; width:500px;" class="ag-theme-alpine"></div>
     <div class="column-1">
-      <span style="font-weight: bold;">Результат: </span><span id="result"></span>
+      <span style="font-weight: bold; ">Результат: </span><span id="result"></span>
     </div>
   </div>
-  
+
+
+
 </div>
 
     <!--<script>
@@ -62,24 +85,25 @@
     <!-- <span>Сумма: </span><span id="sum"></span>
     <span>Сумма2: </span><span id="summa"></span> -->
 
-<a class="back" onclick="javascript:history.back();return false;">
-<img src="img/ctrelka.png" alt="Картинка" width="50" style="background: white; border-radius: 50%;"/>
-</a>
+
 
 <style>
-  body,html{margin:0;padding:0;height:100%;}
     body{
     background: white;
     font-family: Verdana, Helvetica, Arial, sans-serif;
     display:flex;
     flex-direction:column;
     justify-content:center;
+    
     }
-    svg{font-weight:bold;max-width:600px;height:auto;}
     .back{
         position: absolute;
-        bottom: 5%;
-        left: 5%;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        bottom: 10%;
+
     }
 /*             .tab-1{
       position: absolute;
@@ -95,7 +119,7 @@
       display: flex;
       width: 100%;
 
-      justify-content: end;
+      justify-content: space-between;
     }
     .column{
       margin: 10px;
@@ -114,6 +138,7 @@
     .column-1{
       display: flex;
       margin-bottom: 2%;
+      margin-top: 3%;
     }
     .wrapper{
       display: flex;
@@ -133,6 +158,21 @@
     .search{
       display: flex;
       margin: 0 5%;
+    }
+    .line{
+      flex-direction: column;
+      background: white;
+      box-shadow: 0  0 8px rgba(139, 139, 139, 0.205);
+      width: 60px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .column-2{
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      justify-content: center;
     }
 </style>
 </body>
