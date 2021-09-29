@@ -1,29 +1,29 @@
-const columnDefs = [
+const tablPostRasx = [
   { field: "name", editable: true, resizable:true, headerName: 'Название', chartDataType: 'category' },
   { field: "summ", editable: true, resizable:true, headerName: 'Сумма (руб)', chartDataType: 'series' }
 ];
-const columnDefs2 = [
+const tablRasx = [
   { field: "names", editable: true, resizable:true, headerName: 'Название', chartDataType: 'category' },
   { field: "summa", editable: true, resizable:true, headerName: 'Сумма (руб)', chartDataType: 'series' }
 ];
 // specify the data
-const rowData = [
+const rowDataPostRasx = [
   { name: "Квартира", summ: 15000},
   { name: "Интернет", summ: 1000},
   { name: "Коммунальные услуги", summ: 5000},
 ];
-const rowData2 = [
+const rowDataRasx = [
   { names: "Такси ", summa: 10000},
   { names: "Кофточка ", summa: 3000},
   { names: "Роллы ", summa: 1500},
   { names: "Духи ", summa: 5000}
 ];
 // let the grid know which columns and what data to use
-const gridOptions = {
-  columnDefs: columnDefs,
-  rowData: rowData,
+const gridOptionsPostRasx = {
+  columnDefs: tablPostRasx,
+  rowData: rowDataPostRasx,
   onCellValueChanged: () => {
-      setSum();
+      setSumPostRasx();
       calcTotal();
   },
   rowSelection: 'single',
@@ -34,7 +34,7 @@ const gridOptions = {
         columns: ['summ', 'name'],
       },
       chartType: 'line',
-      chartContainer: document.querySelector('#myChart'),
+      chartContainer: document.querySelector('#lineGraphPostRasx'),
       chartThemeOverrides: {
         common: {
           title: {
@@ -51,11 +51,11 @@ const gridOptions = {
     params.api.createRangeChart(createRangeChartParams);
   }
 };
-const gridOptions2 = {
-  columnDefs: columnDefs2,
-  rowData: rowData2,
+const gridOptionsRasx = {
+  columnDefs: tablRasx,
+  rowData: rowDataRasx,
   onCellValueChanged: () => {
-      setSum2();
+      setSumRasx();
       calcTotal();
   },
   rowSelection: 'single',
@@ -67,7 +67,7 @@ const gridOptions2 = {
 
       },
       chartType: 'line',
-      chartContainer: document.querySelector('#myChart2'),
+      chartContainer: document.querySelector('#lineGraphRasx'),
       chartThemeOverrides: {
         common: {
           title: {
@@ -84,82 +84,54 @@ const gridOptions2 = {
     params.api.createRangeChart(createRangeChartParams);
   }
 };
-let grid;
-let gridRight;
+let gridPostRasx;
+let gridRasx;
 
 // setup the grid after the page has finished loading
 document.addEventListener('DOMContentLoaded', () => {
-    const gridDiv = document.querySelector('#myGrid');
-    grid = new agGrid.Grid(gridDiv, gridOptions);
-    setSum();
+    const gridDivPostRasx = document.querySelector('#tablPostRasx');
+    gridPostRasx = new agGrid.Grid(gridDivPostRasx, gridOptionsPostRasx);
+    setSumPostRasx();
 
 
-    const gridDiv2 = document.querySelector('#myGrid2');
-    gridRight = new agGrid.Grid(gridDiv2, gridOptions2);
-    setSum2();
+    const gridDivRasx = document.querySelector('#tablRasx');
+    gridRasx = new agGrid.Grid(gridDivRasx, gridOptionsRasx);
+    setSumRasx();
     calcTotal();
-
-    /* agCharts.AgChart.create({
-      data: rowData,
-      container: document.querySelector('#myChart'),
-      series: [{
-          xKey: 'name',
-          yKey: 'summ',
-          yName: 'Постоянные расходы',
-      }
-    ],
-      legend: {
-        position: 'bottom',
-    },    
-    }); */
-
-/*       agCharts.AgChart.create({
-      data: rowData2,
-      container: document.querySelector('#myChart2'),
-      series: [{
-          xKey: 'names',
-          yKey: 'summa',
-          yName: 'Расходы',
-      }],
-      legend: {
-          position: 'bottom',
-      },
-      
-    }); */
 });
 
 
-function setSum() {
+function setSumPostRasx() {
   globalThis.sum = 0;
 
-    grid.gridOptions.api.forEachNode(node => {
+    gridPostRasx.gridOptions.api.forEachNode(node => {
       sum += +node.data.summ
     });
     //document.getElementById('sum').innerText = sum.toFixed(2);
 }
 
-function setSum2() {
+function setSumRasx() {
   globalThis.sum2 = 0;
-  gridRight.gridOptions.api.forEachNode(node => {
+  gridRasx.gridOptions.api.forEachNode(node => {
     sum2 += +node.data.summa
   });
  // document.getElementById('summa').innerText = sum2.toFixed(2);
 }
-function onDeleteClick(){
-  const rows = grid.gridOptions.api.getSelectedRows();
-  grid.gridOptions.api.applyTransaction({
+function onDeleteClickPostRasx(){
+  const rows = gridPostRasx.gridOptions.api.getSelectedRows();
+  gridPostRasx.gridOptions.api.applyTransaction({
     remove:rows
   });
-  setSum();
+  setSumPostRasx();
   calcTotal();
 }
 
-function onDeleteClick2(){
-  const rows = gridRight.gridOptions.api.getSelectedRows();
-  gridRight.gridOptions.api.applyTransaction({
+function onDeleteClickRasx(){
+  const rows = gridRasx.gridOptions.api.getSelectedRows();
+  gridRasx.gridOptions.api.applyTransaction({
     remove:rows
   });
-  setSum2();
+  setSumRasx();
   calcTotal();
 }
 
@@ -171,14 +143,14 @@ function calcTotal() {
   document.getElementById('result').innerText = res.toFixed(2); 
 }
 
-function onAddClick(){
-  grid.gridOptions.api.applyTransaction({
+function onAddClickPostRasx(){
+  gridPostRasx.gridOptions.api.applyTransaction({
     add: [{ name: "", summ: 0}]
   })
 }
 
-function onAddClick2(){
-  gridRight.gridOptions.api.applyTransaction({
+function onAddClickRasx(){
+  gridRasx.gridOptions.api.applyTransaction({
     add: [{ names: "", summa: 0}]
   })
 }

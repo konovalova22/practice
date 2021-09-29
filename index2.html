@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.js"></script>
-<!--     <link href="https://unpkg.com/@ag-grid-community/all-modules@26.0.1/dist/styles/ag-theme-alpine.css" rel="stylesheet" /> -->
     <script src="https://unpkg.com/ag-charts-community/dist/ag-charts-community.min.js"></script>
     <script src="https://unpkg.com/@ag-grid-enterprise/all-modules@26.0.0/dist/ag-grid-enterprise.min.js"></script>
-    <script src="app.js"></script> 
+    <script src="JS/graph.js"></script> 
+    <link rel="stylesheet" href="CSS/style2.css"> 
    <title>Система планирования бюджета</title>
 </head>
 <body>
@@ -40,8 +40,8 @@
       </a>
   </div>
   <div class="column-2">
-    <div id="myChart" ></div>
-    <div id="myChart2" ></div>
+    <div id="lineGraphPostRasx" ></div>
+    <div id="lineGraphRasx" ></div>
   </div>
   <div class="column">
     <p style="font-weight: bold;">Доходы:</p>
@@ -51,129 +51,25 @@
     <div class="add-1">
       <p class="tab-1" style="font-weight: bold; margin-bottom: 5px; margin-left: 10px;">Постоянные расходы:</p>
       <div class="add">
-        <button onclick="onAddClick()" style="color: white; background: rgba(0, 128, 0, 0.762);"> Добавить </button>
-        <button onclick="onDeleteClick()" style="color: white;background: rgba(255, 0, 0, 0.762);margin: 10px;"> удалить </button>
+        <button onclick="onAddClickPostRasx()" style="color: white; background: rgba(0, 128, 0, 0.762);"> Добавить </button>
+        <button onclick="onDeleteClickPostRasx()" style="color: white;background: rgba(255, 0, 0, 0.762);margin: 10px;"> удалить </button>
       </div>  
       
     </div>  
-    <div id="myGrid" style="height: 200px; width:500px; " class="ag-theme-alpine"></div>
+    <div id="tablPostRasx" style="height: 200px; width:500px; " class="ag-theme-alpine"></div>
     <div class="add-1">
       <p class="tab-2" style="font-weight: bold; margin-bottom: 5px;  margin-left: 10px;" >Расходы:</p>
     <div class="add">
-      <button onclick="onAddClick2()" style="color: white; background: rgba(0, 128, 0, 0.762);"> Добавить</button>
-        <button onclick="onDeleteClick2()" style="color: white; background: rgba(255, 0, 0, 0.762);margin: 10px;"> удалить </button>
+      <button onclick="onAddClickRasx()" style="color: white; background: rgba(0, 128, 0, 0.762);"> Добавить</button>
+        <button onclick="onDeleteClickRasx()" style="color: white; background: rgba(255, 0, 0, 0.762);margin: 10px;"> удалить </button>
     </div>
     </div>
     
-    <div id="myGrid2" style="height: 200px; width:500px;" class="ag-theme-alpine"></div>
+    <div id="tablRasx" style="height: 200px; width:500px;" class="ag-theme-alpine"></div>
     <div class="column-1">
       <span style="font-weight: bold; ">Результат: </span><span id="result"></span>
     </div>
   </div>
-
-
-
 </div>
-
-    <!--<script>
-        input.oninput = function() {
-        result.innerHTML = input.value;
-  };
-    </script> -->
-    
-    
-    <!-- <span>Сумма: </span><span id="sum"></span>
-    <span>Сумма2: </span><span id="summa"></span> -->
-
-
-
-<style>
-    body{
-    background: white;
-    font-family: Verdana, Helvetica, Arial, sans-serif;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    
-    }
-    .back{
-        position: absolute;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-        display: flex;
-        bottom: 10%;
-
-    }
-/*             .tab-1{
-      position: absolute;
-      left: 20%;
-      bottom: 60%;
-    }
-    .tab-2{
-      position: absolute;
-      right: 42%;
-      bottom: 60%;
-    } */
-    .row{
-      display: flex;
-      width: 100%;
-
-      justify-content: space-between;
-    }
-    .column{
-      margin: 10px;
-    }
-    .add-1{
-      background: rgb(226, 225, 225); 
-      display: flex;       
-      justify-content: space-between;    
-      align-items: center; 
-      margin-top: 20px;
-    }
-    .add{
-      text-align: right;
-      
-    }
-    .column-1{
-      display: flex;
-      margin-bottom: 2%;
-      margin-top: 3%;
-    }
-    .wrapper{
-      display: flex;
-      height: auto;
-      background: white;
-      box-shadow: 0  0 8px rgba(139, 139, 139, 0.205);
-      align-items: center;
-      text-align: center;
-      justify-content: space-between;
-    }
-    .logo{
-      display: flex;
-      align-items: center;
-      margin: 0px 10%;
-      font-size: 20px;
-    }
-    .search{
-      display: flex;
-      margin: 0 5%;
-    }
-    .line{
-      flex-direction: column;
-      background: white;
-      box-shadow: 0  0 8px rgba(139, 139, 139, 0.205);
-      width: 60px;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-    .column-2{
-      display: flex;
-      flex-direction: column;
-      width: 50%;
-      justify-content: center;
-    }
-</style>
 </body>
 </html>

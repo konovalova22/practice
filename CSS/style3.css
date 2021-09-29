@@ -1,0 +1,52 @@
+body{
+font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+.wrapper{
+    display: flex;
+    height: auto;
+    background: white;
+    box-shadow: 0  0 8px rgba(139, 139, 139, 0.205);
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    }
+.logo{
+    display: flex;
+    align-items: center;
+    margin: 0px 10%;
+    font-size: 20px;
+    }
+.search{
+    display: flex;
+    margin: 0 5%;
+    }
+.back{
+    position: absolute;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    bottom: 10%;
+}
+.oplata{
+    display: flex;
+    flex-direction: column;
+    
+}
+.carta h2{
+    text-align: center;
+}
+#grid { 
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2vw;
+}
+#grid > div {
+    font-size: 5vw;
+    padding: .4em;
+    background: rgb(240, 240, 240);
+    box-shadow: 0  0 8px rgba(139, 139, 139, 0.205);
+    text-align: center;
+    margin: 20px;
+}
